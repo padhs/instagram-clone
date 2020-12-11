@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand />
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="fc2dea5c-93fa-4728-956c-a82724631b67" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1l9atetrmWgX3AhrVS9aZ9f8S6L" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="autoscrollToSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="android.sdk.path" value="$USER_HOME$/Android/Sdk" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fc2dea5c-93fa-4728-956c-a82724631b67" name="Default Changelist" comment="" />
+      <created>1607011980655</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1607011980655</updated>
+      <workItem from="1607011984944" duration="2755000" />
+      <workItem from="1607066592840" duration="595000" />
+      <workItem from="1607070137828" duration="1198000" />
+      <workItem from="1607439052828" duration="1389000" />
+      <workItem from="1607491091939" duration="18864000" />
+      <workItem from="1607581947197" duration="596000" />
+      <workItem from="1607595689440" duration="9338000" />
+      <workItem from="1607668916401" duration="343000" />
+      <workItem from="1607669271235" duration="6443000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1747" y="776" width="636" height="716" key="FileChooserDialogImpl" timestamp="1607538724860">
+      <screen x="0" y="0" width="3840" height="2113" />
+    </state>
+    <state x="1747" y="776" width="636" height="716" key="FileChooserDialogImpl/0.0.3840.2113@0.0.3840.2113" timestamp="1607538724860" />
+    <state x="580" y="126" width="1135" height="906" key="SettingsEditor" timestamp="1607669543129">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="580" y="126" width="1135" height="906" key="SettingsEditor/0.0.1920.1032@0.0.1920.1032" timestamp="1607669543129" />
+    <state x="1159" y="516" width="1522" height="1084" key="SettingsEditor/0.0.3840.2113@0.0.3840.2113" timestamp="1607012279584" />
+    <state x="1667" y="466" width="979" height="1246" key="new project wizard" timestamp="1607441040759">
+      <screen x="0" y="0" width="3840" height="2113" />
+    </state>
+    <state x="1667" y="466" width="979" height="1246" key="new project wizard/0.0.3840.2113@0.0.3840.2113" timestamp="1607441040759" />
+    <state x="1014" y="283" width="946" height="718" key="search.everywhere.popup" timestamp="1607692645270">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="1014" y="283" width="946" height="718" key="search.everywhere.popup/0.0.1920.1032@0.0.1920.1032" timestamp="1607692645270" />
+    <state x="2027" y="580" width="1009" height="1470" key="search.everywhere.popup/0.0.3840.2113@0.0.3840.2113" timestamp="1607497453755" />
+  </component>
+</project>
