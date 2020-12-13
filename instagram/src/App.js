@@ -5,12 +5,12 @@ import Post from './Post.js'
 function App() {
 
     //adding post-state
-    const postStates = [posts, setPosts] = useState({
-        userName: "",
-        imageUrl: "",
-        captions: "",
-        postAvatar: {/*this will contain  user-profile-image*/},
-        likeCount: 0})
+    // const postStates = [posts, setPosts] = useState({
+    //     userName: "",
+    //     imageUrl: "",
+    //     captions: "",
+    //     postAvatar: {/*this will contain  user-profile-image*/},
+    //     likeCount: 0})
 
   return (
     <div className = "app">

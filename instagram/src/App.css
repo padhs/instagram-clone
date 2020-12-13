@@ -11,13 +11,14 @@
   object-fit: contain;
   align-items: center;
   padding-top: 15px;
-  padding-left: 31.15%;
+  padding-left: 15%;
   padding-bottom: 5px;
 }
 
 .Post{
   background-color: #ffffff;
   margin-top: 22px;
+  margin-left: 15%;
   margin-bottom: 60px;
   max-width: 700px;
   border: 1px solid;

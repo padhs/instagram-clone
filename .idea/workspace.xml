@@ -5,7 +5,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fc2dea5c-93fa-4728-956c-a82724631b67" name="Default Changelist" comment="" />
+    <list default="true" id="fc2dea5c-93fa-4728-956c-a82724631b67" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/instagram/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/instagram/.eslintcache" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,19 +45,6 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
   </component>
-  <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -73,6 +62,7 @@
       <workItem from="1607595689440" duration="9338000" />
       <workItem from="1607668916401" duration="343000" />
       <workItem from="1607669271235" duration="6443000" />
+      <workItem from="1607700940015" duration="8000" />
     </task>
     <servers />
   </component>
