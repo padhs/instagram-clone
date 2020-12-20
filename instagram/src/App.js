@@ -1,16 +1,17 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import './App.css';
 import Post from './Post.js'
+import {database} from "./firebase";
 
 function App() {
 
-    //adding post-state
-    // const postStates = [posts, setPosts] = useState({
-    //     userName: "",
-    //     imageUrl: "",
-    //     captions: "",
-    //     postAvatar: {/*this will contain  user-profile-image*/},
-    //     likeCount: 0})
+    const [posts, setPosts] =useState([]);
+
+    useEffect(() => {
+        database.collection('posts').onSnapshot(snapshot => {
+            setPosts(snapshot.docs.map(doc => doc.data()));
+        })
+    }, [posts])
 
   return (
     <div className = "app">
@@ -20,23 +21,18 @@ function App() {
                alt="insta-letter-logo"
           />
       </div>
-        <Post
-            userName="padhs"
-            captions="This is my first Instagram post."
-            imageUrl="https://hips.hearstapps.com/ghk.h-cdn.co/assets/16/08/gettyimages-464163411.jpg?crop=1.0xw:1xh;center,top&resize=980:*"
-            postAvatar="https://thispersondoesnotexist.com/image"/>
 
-        <Post
-            userName="chipun"
-            captions="This is my second Instagram post."
-            imageUrl="https://www.petlandflorida.com/wp-content/uploads/2019/09/Petland_Florida_Cavalier_King_Charles_Spaniel_puppy.jpg"
-            postAvatar="https://thispersondoesnotexist.com/image"/>
+        {
+            posts.map(posts =>(
+                <Post
+                    //these elements are not being rendered
+                    userName={posts.userName}
+                    captions={posts.captions}
+                    imageUrl={posts.imageUrl}
+                    postAvatar={posts.postAvatar}/>
+            ))
+        }
 
-        <Post
-            userName="DorkyHead"
-            captions="This is my third Instagram post."
-            imageUrl="https://cdn.akc.org/content/article-body-image/cavkingcharlessmalldogs.jpg"
-            postAvatar="https://thispersondoesnotexist.com/image"/>
     </div>
   );
 }

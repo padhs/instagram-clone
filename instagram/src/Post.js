@@ -1,6 +1,5 @@
 import React from 'react';
 import Avatar from "@material-ui/core/Avatar";
-import Comments from "./Comments";
 
 
 function Post({userName, captions, imageUrl, postAvatar}) {
@@ -9,9 +8,8 @@ function Post({userName, captions, imageUrl, postAvatar}) {
         <div className="Post">
                 <div className="avatar">
                     <Avatar className="post-header"
-                            alt = {userName}
+                            alt = "your-avatar"
                             src={postAvatar}>
-
                     </Avatar>
                     <h5 className="post-user-name-top">{userName}</h5>
 
