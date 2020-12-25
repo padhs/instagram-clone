@@ -24,8 +24,7 @@
   border: 1px solid;
   border-color: #dddddd;
 }
-.post-header{
-}
+
 .avatar{
   display: flex;
   flex-direction: row;
@@ -50,4 +49,45 @@
 
 .post-description-name{
   padding-right: 5px;
+}
+
+.signup-form{
+  display: flex;
+  flex-direction: column;
+  object-fit: contain;
+  text-align: center;
+}
+.insta-logo-login{
+  padding-left: 25%;
+}
+.username-login{
+  margin-top: 20px;
+  margin-bottom: 5px;
+  border-top: 2px solid;
+  border-left: 2px solid;
+  border-right: 2px solid;
+  border-color: #dddddd;
+  border-radius: 5px;
+}
+.pass-login{
+  margin-bottom: 20px;
+  border-top: 2px solid;
+  border-left: 2px solid;
+  border-right: 2px solid;
+  border-color: #dddddd;
+  border-radius: 5px;
+}
+.login-button{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.forgot-pass{
+  margin-top: 25px;
+  font-size: x-small;
+}
+.no-account{
+  padding-top: 2px;
+}
+.signup-instead{
+  font-size: x-small;
 }
