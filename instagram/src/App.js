@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
 import Post from './Post.js'
-import { database, auth,} from "./firebase";
+import { database, auth } from "./firebase";
 import Modal from "@material-ui/core/Modal";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import Button from "@material-ui/core/Button";
@@ -40,9 +40,13 @@ function App() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [user, setUser] = useState(null);
+    //user is understood as an object.
+    //By default there is no user (so null) useState is going to change the object type when there is a user logged in (not null).
 
-    const handleLogIn = (event) => {
-        event.preventDefault();
+    const handleLogIn = (login) => {
+        login.preventDefault();
+        //removal of this would result the user never being able to log in.
+        //preventDefault does not refresh the page, that it would do by-default when we hit the login button.
         auth.createUserWithEmailAndPassword(email, password)
             .catch((error) => alert(error.message));
     }
@@ -90,13 +94,15 @@ function App() {
         </div>
     );
 
+    //this code comes into work anytime when an user gets logged in or out as the state of the user(object) gets changed.
     useEffect(() => {
         auth.onAuthStateChanged((authUser) => {
          if (authUser) {
              //user has logged in.
-             setUser(authUser);
+             console.log(authUser);
+             setUser(authUser);//uses cookie tracking.(so this is persistent)
              //state is not persistent
-             //line 97 makes sure that the user remains logged in.
+             //line 98 makes sure that the user remains logged in.
              // if () {}
          }else {
              //user is not logged in. (logged out.)
@@ -133,9 +139,11 @@ function App() {
       </div>
 
         <Button
+            className="login-button-before-posts"
             onClick={() => setOpen(true)}>
-            Sign Up
+            LOGIN
         </Button>
+
         {
             posts.map(({id, posts}) => (
                 <Post
