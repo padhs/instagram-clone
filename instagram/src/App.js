@@ -40,6 +40,7 @@ function App() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [user, setUser] = useState(null);
+    const [username, setUsername] = useState('')
     //user is understood as an object.
     //By default there is no user (so null) useState is going to change the object type when there is a user logged in (not null).
 
@@ -48,6 +49,11 @@ function App() {
         //removal of this would result the user never being able to log in.
         //preventDefault does not refresh the page, that it would do by-default when we hit the login button.
         auth.createUserWithEmailAndPassword(email, password)
+            .then((authUser => {
+                return authUser.user.updateProfile({
+                    displayName: username
+                })
+            }))
             .catch((error) => alert(error.message));
     }
     //this will close the login modal
@@ -96,19 +102,26 @@ function App() {
 
     //this code comes into work anytime when an user gets logged in or out as the state of the user(object) gets changed.
     useEffect(() => {
-        auth.onAuthStateChanged((authUser) => {
+        const verifyUser = auth.onAuthStateChanged((authUser) => {
          if (authUser) {
              //user has logged in.
              console.log(authUser);
              setUser(authUser);//uses cookie tracking.(so this is persistent)
              //state is not persistent
              //line 98 makes sure that the user remains logged in.
-             // if () {}
-         }else {
+
+         } else {
              //user is not logged in. (logged out.)
              setUser(null)
          }
-        })}, [user]);
+
+        })
+        return () => {
+            //check if the user is spamming. (creating too many login sessions too quick)
+            verifyUser();
+            //if the user didn't do that earlier, it will then fire the useEffect
+        }
+    }, [user, username]);
 
     useEffect(() => {
         database.collection('posts').onSnapshot(snapshot => {
