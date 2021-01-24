@@ -4,7 +4,7 @@
 
 .nav-bar{
   background-color: #ffffff;
-  border-bottom: 1px solid;
+  border-bottom: 1.5px solid;
   border-bottom-color: #dddddd;
 }
 .nav-bar-image{
@@ -14,17 +14,15 @@
   padding-left: 15%;
   padding-bottom: 5px;
 }
-.login-button-before-posts{
-  
-}
 
 .Post{
+  object-fit: contain;
+  position: relative;
   background-color: #ffffff;
   margin-top: 22px;
-  margin-left: 15%;
   margin-bottom: 60px;
   max-width: 700px;
-  border: 1px solid;
+  border: 1.5px solid;
   border-color: #dddddd;
 }
 
@@ -72,6 +70,14 @@
   border-color: #dddddd;
   border-radius: 5px;
 }
+.email-login{
+  margin-bottom: 5px;
+  border-top: 2px solid;
+  border-left: 2px solid;
+  border-right: 2px solid;
+  border-color: #dddddd;
+  border-radius: 5px;
+}
 .pass-login{
   margin-bottom: 20px;
   border-top: 2px solid;
@@ -80,12 +86,17 @@
   border-color: #dddddd;
   border-radius: 5px;
 }
+
+.signin-button{
+  padding: 10px;
+}
 .login-button{
-  padding-top: 10px;
+  padding-top: 20px;
   padding-bottom: 10px;
 }
 .forgot-pass{
   margin-top: 25px;
+  margin-bottom: 3px;
   font-size: x-small;
 }
 .no-account{
@@ -93,4 +104,5 @@
 }
 .signup-instead{
   font-size: x-small;
+  padding-bottom: 20px;
 }

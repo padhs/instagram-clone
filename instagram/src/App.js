@@ -44,7 +44,7 @@ function App() {
     //user is understood as an object.
     //By default there is no user (so null) useState is going to change the object type when there is a user logged in (not null).
 
-    const handleLogIn = (login) => {
+    const handleSignIn = (login) => {
         login.preventDefault();
         //removal of this would result the user never being able to log in.
         //preventDefault does not refresh the page, that it would do by-default when we hit the login button.
@@ -72,8 +72,15 @@ function App() {
                     height="50.99"
                     src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png"
                     alt="insta-letter-logo"/>
+
                 <Input
                     className="username-login"
+                    placeholder="username"
+                    type="text"
+                    value={username}
+                    onChange={(username) => setUsername(username.target.value)}/>
+                <Input
+                    className="email-login"
                     placeholder="email"
                     type="text"
                     value={email}
@@ -87,14 +94,21 @@ function App() {
                     onChange={(pass) => setPassword(pass.target.value)} />
 
                 <Button
-                    className="login-button"
-                    type="submit"
-                    onClick={handleLogIn}>
-                    LOGIN
+                    className="signin-button"
+                    type="submit">
+                    LOG IN
                 </Button>
                 <p className="forgot-pass">Forgot Password?</p>
                 <div className="no-account">
                     <p className="signup-instead">Dont have an account? Sign Up instead</p>
+
+                    <Button
+                        className="login-button"
+                        type="submit"
+                        onClick={handleSignIn}>
+                        SIGN UP
+                    </Button>
+
                 </div>
             </form>
         </div>
@@ -154,8 +168,14 @@ function App() {
         <Button
             className="login-button-before-posts"
             onClick={() => setOpen(true)}>
-            LOGIN
+            LOG IN
         </Button>
+        <Button
+            classname="signup-button-before-posts"
+            onClick={() => setOpen(true)}>
+            SIGN UP
+        </Button>
+
 
         {
             posts.map(({id, posts}) => (
