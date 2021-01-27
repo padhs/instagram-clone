@@ -22,7 +22,7 @@ function getModalStyle() {
 const useStyles = makeStyles((theme) => ({
     paper: {
         position: 'relative',
-        width: 400,
+        width: 700,
         backgroundColor: theme.palette.background.paper,
         border: '1px solid #ddd',
         boxShadow: theme.shadows[5],
@@ -74,6 +74,9 @@ function App() {
     //modal for signup. not for login
     const body = (
         <div className="modal-insta-logo">
+            <img className="modal-phone-pic"
+                 src="https://firebasestorage.googleapis.com/v0/b/instagram-clone-7a115.appspot.com/o/normalphone.png?alt=media&token=bf47c0ad-9094-4f50-b785-31370285570b"
+                 alt="phone-image"/>
             <form className="signup-form">
                 <img
                     className="insta-logo-login"
@@ -161,6 +164,9 @@ function App() {
                 className={classes.paper}
                 style={modalStyle}>
                 <div className="modal-insta-logo">
+                    <img className="modal-phone-pic"
+                         src="https://firebasestorage.googleapis.com/v0/b/instagram-clone-7a115.appspot.com/o/normalphone.png?alt=media&token=bf47c0ad-9094-4f50-b785-31370285570b"
+                         alt="phone-image"/>
                     <form className="signup-form">
                         <img
                             className="insta-logo-login"
@@ -215,17 +221,9 @@ function App() {
             (<Button onClick={() => auth.signOut()}>LOG OUT</Button>):
             <div className="app-login-container">
                 <Button onClick={() => setOpen(true)}>SIGN UP</Button>
-                <Button onClick={() => setOpenSignIn(true)}>SIGN IN</Button>
+                <Button onClick={() => setOpenSignIn(true)}>LOG IN</Button>
             </div>
         }
-
-        <Button
-            //i need this to be conditionally rendered (if the user is not logged in earlier.   )
-            classname="signup-button-before-posts"
-            onClick={() => setOpen(true)}>
-            SIGN UP
-        </Button>
-
 
         {
             posts.map(({id, posts}) => (
