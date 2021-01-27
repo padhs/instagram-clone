@@ -41,6 +41,7 @@ function App() {
     const [password, setPassword] = useState('');
     const [user, setUser] = useState(null);
     const [username, setUsername] = useState('')
+    const [openSignIn, setOpenSignIn] = useState(false);
     //user is understood as an object.
     //By default there is no user (so null) useState is going to change the object type when there is a user logged in (not null).
 
@@ -60,9 +61,17 @@ function App() {
     const closeHandler = () => {
         setOpen(false);
     };
+    const signIn = (event) => {
+        event.preventDefault();
+        auth
+            .signInWithEmailAndPassword(email, password)
+            .catch((error) => alert(error.message))
+        setOpenSignIn(false);
+    }
 
 
     //this is the modal(dialog-box design)
+    //modal for signup. not for login
     const body = (
         <div className="modal-insta-logo">
             <form className="signup-form">
@@ -72,7 +81,6 @@ function App() {
                     height="50.99"
                     src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png"
                     alt="insta-letter-logo"/>
-
                 <Input
                     className="username-login"
                     placeholder="username"
@@ -96,20 +104,8 @@ function App() {
                 <Button
                     className="signin-button"
                     type="submit">
-                    LOG IN
+                    SIGN UP
                 </Button>
-                <p className="forgot-pass">Forgot Password?</p>
-                <div className="no-account">
-                    <p className="signup-instead">Dont have an account? Sign Up instead</p>
-
-                    <Button
-                        className="login-button"
-                        type="submit"
-                        onClick={handleSignIn}>
-                        SIGN UP
-                    </Button>
-
-                </div>
             </form>
         </div>
     );
@@ -119,11 +115,9 @@ function App() {
         const verifyUser = auth.onAuthStateChanged((authUser) => {
          if (authUser) {
              //user has logged in.
-             console.log(authUser);
+             console.log(authUser);//this is for my convenience. not for the user.
              setUser(authUser);//uses cookie tracking.(so this is persistent)
              //state is not persistent
-             //line 98 makes sure that the user remains logged in.
-
          } else {
              //user is not logged in. (logged out.)
              setUser(null)
@@ -133,6 +127,7 @@ function App() {
         return () => {
             //check if the user is spamming. (creating too many login sessions too quick)
             verifyUser();
+            //detach the listener so that we don't have too many listeners created.(in case someone is out of their minds.)
             //if the user didn't do that earlier, it will then fire the useEffect
         }
     }, [user, username]);
@@ -150,11 +145,63 @@ function App() {
     <div className = "app">
         <Modal
             open={open}
-            close={closeHandler}>
+            onClose={closeHandler}>
             <div
                 className={classes.paper}
                  style={modalStyle}>
                  {body}
+            </div>
+        </Modal>
+
+        <Modal
+            //this is the modal for login. this should have a signup button(conditional rendering.)
+            open={openSignIn}
+            onClose={() => setOpenSignIn(false)}>
+            <div
+                className={classes.paper}
+                style={modalStyle}>
+                <div className="modal-insta-logo">
+                    <form className="signup-form">
+                        <img
+                            className="insta-logo-login"
+                            width="174.99"
+                            height="50.99"
+                            src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png"
+                            alt="insta-letter-logo"/>
+
+                        <Input
+                            className="email-login"
+                            placeholder="email"
+                            type="text"
+                            value={email}
+                            onChange={(email) => setEmail(email.target.value)} />
+
+                        <Input
+                            className="pass-login"
+                            placeholder="password"
+                            type="password"
+                            value={password}
+                            onChange={(pass) => setPassword(pass.target.value)} />
+
+                        <Button
+                            className="signin-button"
+                            type="submit">
+                            LOG IN
+                        </Button>
+                        <p className="forgot-pass">Forgot Password?</p>
+                        <div className="no-account">
+                            <p className="signup-instead">Dont have an account? Sign Up instead (click on the <strong>SIGN UP</strong> button down below.)</p>
+
+                            <Button
+                                className="login-button"
+                                type="submit"
+                                onClick={handleSignIn}>
+                                SIGN UP
+                            </Button>
+
+                        </div>
+                    </form>
+                </div>
             </div>
         </Modal>
 
@@ -164,13 +211,16 @@ function App() {
                alt="insta-letter-logo"
           />
       </div>
+        {user ?
+            (<Button onClick={() => auth.signOut()}>LOG OUT</Button>):
+            <div className="app-login-container">
+                <Button onClick={() => setOpen(true)}>SIGN UP</Button>
+                <Button onClick={() => setOpenSignIn(true)}>SIGN IN</Button>
+            </div>
+        }
 
         <Button
-            className="login-button-before-posts"
-            onClick={() => setOpen(true)}>
-            LOG IN
-        </Button>
-        <Button
+            //i need this to be conditionally rendered (if the user is not logged in earlier.   )
             classname="signup-button-before-posts"
             onClick={() => setOpen(true)}>
             SIGN UP

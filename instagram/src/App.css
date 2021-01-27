@@ -14,8 +14,12 @@
   padding-left: 15%;
   padding-bottom: 5px;
 }
+.app-login-container{
+  object-fit: contain;
+}
 
 .Post{
+  margin-left: 10%;
   object-fit: contain;
   position: relative;
   background-color: #ffffff;
