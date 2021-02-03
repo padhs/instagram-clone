@@ -45,8 +45,8 @@ function App() {
     //user is understood as an object.
     //By default there is no user (so null) useState is going to change the object type when there is a user logged in (not null).
 
-    const handleSignIn = (login) => {
-        login.preventDefault();
+    const handleSignIn = (event) => {
+        event.preventDefault();
         //removal of this would result the user never being able to log in.
         //preventDefault does not refresh the page, that it would do by-default when we hit the login button.
         auth.createUserWithEmailAndPassword(email, password)
@@ -56,16 +56,17 @@ function App() {
                 })
             }))
             .catch((error) => alert(error.message));
+        setOpen(false);
     }
     //this will close the login modal
     const closeHandler = () => {
         setOpen(false);
     };
-    const signIn = (event) => {
+    const logIn = (event) => {
         event.preventDefault();
         auth
             .signInWithEmailAndPassword(email, password)
-            .catch((error) => alert(error.message))
+            .catch((error) => alert(error.message));
         setOpenSignIn(false);
     }
 
@@ -106,6 +107,7 @@ function App() {
 
                 <Button
                     className="signin-button"
+                    onClick={handleSignIn}
                     type="submit">
                     SIGN UP
                 </Button>
@@ -147,6 +149,7 @@ function App() {
   return (
     <div className = "app">
         <Modal
+            //this is the modal for Sign Up.
             open={open}
             onClose={closeHandler}>
             <div
@@ -191,6 +194,7 @@ function App() {
 
                         <Button
                             className="signin-button"
+                            onClick={logIn}
                             type="submit">
                             LOG IN
                         </Button>
@@ -200,8 +204,8 @@ function App() {
 
                             <Button
                                 className="login-button"
-                                type="submit"
-                                onClick={handleSignIn}>
+                                onClick={() => setOpen(true)}
+                                type="submit">
                                 SIGN UP
                             </Button>
 
