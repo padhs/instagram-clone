@@ -172,8 +172,7 @@ function App() {
 
         <Modal
             //this is the modal for login. this should have a signup button(conditional rendering.)
-            open={openSignIn}
-            onClose={() => setOpenSignIn(false)}>
+            open={openSignIn}>
             <div
                 className={classes.paper}
                 style={modalStyle}>
@@ -233,7 +232,8 @@ function App() {
       </div>
         {user ?
             <div className="app-logout-container">
-                <Button onClick={() => auth.signOut()}>LOG OUT</Button>
+                <Button onClick={() => {auth.signOut();
+                                        setOpenSignIn(true)}}>LOG OUT</Button>
                 {
                     posts.map(({id, posts}) => (
                         <Post
@@ -247,8 +247,7 @@ function App() {
                     ))
                 }
             </div>:
-            <div className="app-login-container">
-                <Button onClick={() => setOpenSignIn(true)}>LOG IN</Button>
+            <div>{/*render nothing*/}
             </div>
         }
     </div>
