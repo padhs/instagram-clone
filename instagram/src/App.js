@@ -41,7 +41,7 @@ function App() {
     const [password, setPassword] = useState('');
     const [user, setUser] = useState(null);
     const [username, setUsername] = useState('')
-    const [openSignIn, setOpenSignIn] = useState(false);
+    const [openSignIn, setOpenSignIn] = useState(true);
     //user is understood as an object.
     //By default there is no user (so null) useState is going to change the object type when there is a user logged in (not null).
 
@@ -57,6 +57,7 @@ function App() {
             }))
             .catch((error) => alert(error.message));
         setOpen(false);
+        setOpenSignIn(false);
     }
     //this will close the login modal
     const closeHandler = () => {
@@ -68,6 +69,7 @@ function App() {
             .signInWithEmailAndPassword(email, password)
             .catch((error) => alert(error.message));
         setOpenSignIn(false);
+        setOpen(false);
     }
 
 
@@ -111,6 +113,15 @@ function App() {
                     type="submit">
                     SIGN UP
                 </Button>
+                <p className="i-account">
+                    I have an account. Login instead.
+                </p>
+                <Button
+                    className="login-in-signin-modal"
+                    onClick={() => setOpen(false)}>
+                    LOG IN
+                </Button>
+
             </form>
         </div>
     );
@@ -204,8 +215,7 @@ function App() {
 
                             <Button
                                 className="login-button"
-                                onClick={() => setOpen(true)}
-                                type="submit">
+                                onClick={() => setOpen(true)}>
                                 SIGN UP
                             </Button>
 
@@ -222,24 +232,24 @@ function App() {
           />
       </div>
         {user ?
-            (<Button onClick={() => auth.signOut()}>LOG OUT</Button>):
+            <div className="app-logout-container">
+                <Button onClick={() => auth.signOut()}>LOG OUT</Button>
+                {
+                    posts.map(({id, posts}) => (
+                        <Post
+
+                            key={id}
+                            //mapping document id so that react doesn't re-render a post that is already showing.
+                            userName={posts.userName}
+                            captions={posts.captions}
+                            imageUrl={posts.imageUrl}
+                            postAvatar={posts.postAvatar}/>
+                    ))
+                }
+            </div>:
             <div className="app-login-container">
-                <Button onClick={() => setOpen(true)}>SIGN UP</Button>
                 <Button onClick={() => setOpenSignIn(true)}>LOG IN</Button>
             </div>
-        }
-
-        {
-            posts.map(({id, posts}) => (
-                <Post
-
-                    key={id}
-                    //mapping document id so that react doesn't re-render a post that is already showing.
-                    userName={posts.userName}
-                    captions={posts.captions}
-                    imageUrl={posts.imageUrl}
-                    postAvatar={posts.postAvatar}/>
-            ))
         }
     </div>
   );
