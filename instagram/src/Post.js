@@ -6,14 +6,14 @@ function Post({userName, captions, imageUrl, postAvatar}) {
 
     return(
         <div className="Post">
-                <div className="avatar">
-                    <Avatar className="post-header"
-                            alt = "your-avatar"
-                            src={postAvatar}>
-                    </Avatar>
-                    <h5 className="post-user-name-top">{userName}</h5>
+            <div className="avatar">
+                <Avatar className="post-header"
+                        alt = "your-avatar"
+                        src={postAvatar}>
+                </Avatar>
+                <h5 className="post-user-name-top">{userName}</h5>
 
-                </div>
+            </div>
 
             {/* eslint-disable-next-line jsx-a11y/img-redundant-alt */}
             <img className = "user-image"

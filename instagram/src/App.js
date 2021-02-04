@@ -6,6 +6,7 @@ import Modal from "@material-ui/core/Modal";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import Button from "@material-ui/core/Button";
 import Input from "@material-ui/core/Input";
+import Avatar from "@material-ui/core/Avatar";
 
 
 function getModalStyle() {
@@ -59,10 +60,7 @@ function App() {
         setOpen(false);
         setOpenSignIn(false);
     }
-    //this will close the login modal
-    const closeHandler = () => {
-        setOpen(false);
-    };
+
     const logIn = (event) => {
         event.preventDefault();
         auth
@@ -156,13 +154,12 @@ function App() {
     //not dependent on posts now. cause we are mapping document id with each post.
 
 
-
   return (
     <div className = "app">
         <Modal
             //this is the modal for Sign Up.
             open={open}
-            onClose={closeHandler}>
+            onClose={() => setOpen(false)}>
             <div
                 className={classes.paper}
                  style={modalStyle}>
@@ -229,15 +226,16 @@ function App() {
                src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png"
                alt="insta-letter-logo"
           />
+            {user ? <Button
+                className="logout-navbar-button"
+                onClick={() => auth.signOut().then(() => setOpenSignIn(true))}>LOG OUT</Button> : <div>{/**/}</div>}
       </div>
         {user ?
             <div className="app-logout-container">
-                <Button onClick={() => {auth.signOut();
-                                        setOpenSignIn(true)}}>LOG OUT</Button>
                 {
                     posts.map(({id, posts}) => (
                         <Post
-
+                            className="column-direction"
                             key={id}
                             //mapping document id so that react doesn't re-render a post that is already showing.
                             userName={posts.userName}
@@ -246,8 +244,50 @@ function App() {
                             postAvatar={posts.postAvatar}/>
                     ))
                 }
+                <div className="instagram-embed">
+                    <div className="embed-unit">
+                        <Avatar
+                            className="embed-classname"
+                            alt = "embed-avatar"
+                            src = "https://thispersondoesnotexist.com/image">
+                        </Avatar>
+                        <div className="embed-username">
+                            <h5 className="embed-user">
+                                <strong>mark.rober</strong>
+                            </h5>
+                            <p className="follow-by">followed by padhs</p>
+
+                        </div>
+                    </div>
+                    <div className="embed-unit">
+                        <Avatar
+                            className="embed-classname"
+                            alt = "embed-avatar"
+                            src = "https://thispersondoesnotexist.com/image">
+                        </Avatar>
+                        <div className="embed-username">
+                            <h5 className="embed-user">
+                                <strong>david@TheDOBRIK</strong>
+                            </h5>
+                            <p className="follow-by">followed by dorkyhead</p>
+                        </div>
+                    </div>
+                    <div className="embed-unit">
+                        <Avatar
+                            className="embed-classname"
+                            alt = "embed-avatar"
+                            src = "https://thispersondoesnotexist.com/image">
+                        </Avatar>
+                        <div className="embed-username">
+                            <h5 className="embed-user">
+                                <strong>@ashish.chanchlani vines</strong>
+                            </h5>
+                            <p className="follow-by">suggested for you</p>
+                        </div>
+                    </div>
+                </div>
             </div>:
-            <div>{/*render nothing*/}
+            <div>{/*render nothing. It's an empty div container*/}
             </div>
         }
     </div>

@@ -6,16 +6,22 @@
   background-color: #ffffff;
   border-bottom: 1.5px solid;
   border-bottom-color: #dddddd;
+  display: flex;
+  flex-direction: row;
+  object-fit: contain;
 }
+
 .nav-bar-image{
   object-fit: contain;
   align-items: center;
   padding-top: 15px;
   padding-left: 15%;
   padding-bottom: 5px;
+  padding-right: 50%
 }
-.app-login-container{
-
+.app-logout-container{
+  display: flex;
+  flex-direction: column;
 }
 
 .Post{
@@ -127,4 +133,35 @@
 .i-account{
   margin-top: 15%;
   margin-bottom: 5%;
+}
+.instagram-embed-flex{
+  display: flex;
+  flex-direction: column;
+}
+.instagram-embed{
+  display: flex;
+  flex-direction: column;
+}
+.embed-classname{
+}
+.embed-username{
+  display: flex;
+  flex-direction: column;
+  object-fit: contain;
+  padding-left: 10px;
+}
+.embed-user{
+  padding-top: 3px;
+}
+.follow-by{
+  color: #999;
+  font-size: x-small;
+}
+.embed-unit{
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+}
+.follow-button{
+
 }
