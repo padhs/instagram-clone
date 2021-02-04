@@ -19,9 +19,13 @@
   padding-bottom: 5px;
   padding-right: 50%
 }
-.app-logout-container{
+.app-login-container{
   display: flex;
   flex-direction: column;
+}
+.app-container{
+  display: flex;
+  flex-direction: row;
 }
 
 .Post{
@@ -141,9 +145,11 @@
 .instagram-embed{
   display: flex;
   flex-direction: column;
+  padding-left: 30px;
+  padding-top: 60px;
+  padding-right: 20px;
 }
-.embed-classname{
-}
+
 .embed-username{
   display: flex;
   flex-direction: column;
@@ -160,8 +166,24 @@
 .embed-unit{
   display: flex;
   flex-direction: row;
-  padding: 10px;
+  padding-bottom: 15px;
+  padding-right: 30px;
+  justify-content: space-between;
 }
-.follow-button{
-
+.suggestions{
+  padding-left: 5px;
+  font-size: small;
+  color: #999999;
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+.follow-me{
+  padding-top: 10px;
+  margin-left: 40px;
+  font-size: small;
+  color: #0295f6;
+}
+.one-flex-unit{
+  display: flex;
+  flex-direction: row;
 }

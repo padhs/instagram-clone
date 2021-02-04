@@ -231,58 +231,131 @@ function App() {
                 onClick={() => auth.signOut().then(() => setOpenSignIn(true))}>LOG OUT</Button> : <div>{/**/}</div>}
       </div>
         {user ?
-            <div className="app-logout-container">
-                {
-                    posts.map(({id, posts}) => (
-                        <Post
-                            className="column-direction"
-                            key={id}
-                            //mapping document id so that react doesn't re-render a post that is already showing.
-                            userName={posts.userName}
-                            captions={posts.captions}
-                            imageUrl={posts.imageUrl}
-                            postAvatar={posts.postAvatar}/>
-                    ))
-                }
+            <div className="app-container">
+                <div className="app-login-container">
+                    {
+                        posts.map(({id, posts}) => (
+                            <Post
+                                className="column-direction"
+                                key={id}
+                                //mapping document id so that react doesn't re-render a post that is already showing.
+                                userName={posts.userName}
+                                captions={posts.captions}
+                                imageUrl={posts.imageUrl}
+                                postAvatar={posts.postAvatar}/>
+                        ))
+                    }
+                </div>
                 <div className="instagram-embed">
                     <div className="embed-unit">
-                        <Avatar
-                            className="embed-classname"
-                            alt = "embed-avatar"
-                            src = "https://thispersondoesnotexist.com/image">
-                        </Avatar>
-                        <div className="embed-username">
-                            <h5 className="embed-user">
-                                <strong>mark.rober</strong>
-                            </h5>
-                            <p className="follow-by">followed by padhs</p>
-
+                        <div className="one-flex-unit">
+                            <Avatar
+                                className="embed-classname"
+                                alt = "embed-avatar"
+                                src = "https://thispersondoesnotexist.com/image">
+                            </Avatar>
+                            <div className="embed-username">
+                                <h5 className="embed-user">
+                                    <strong>mark.Rober</strong>
+                                </h5>
+                                <p className="follow-by">followed by padhs</p>
+                            </div>
+                        </div>
+                        <div className="folllow-button">
+                            <p className="follow-me"><strong>Follow</strong></p>
+                        </div>
+                    </div>
+                    <div className="suggestions">
+                        <h4>Suggestions For You</h4>
+                    </div>
+                    <div className="embed-unit">
+                        <div className="one-flex-unit">
+                            <Avatar
+                                className="embed-classname"
+                                alt = "embed-avatar"
+                                src = "https://thispersondoesnotexist.com/image">
+                            </Avatar>
+                            <div className="embed-username">
+                                <h5 className="embed-user">
+                                    <strong>@sish.Chanchlani Vines</strong>
+                                </h5>
+                                <p className="follow-by">followed by dorkyhead</p>
+                            </div>
+                        </div>
+                        <div className="folllow-button">
+                            <p className="follow-me"><strong>Follow</strong></p>
                         </div>
                     </div>
                     <div className="embed-unit">
-                        <Avatar
-                            className="embed-classname"
-                            alt = "embed-avatar"
-                            src = "https://thispersondoesnotexist.com/image">
-                        </Avatar>
-                        <div className="embed-username">
-                            <h5 className="embed-user">
-                                <strong>david@TheDOBRIK</strong>
-                            </h5>
-                            <p className="follow-by">followed by dorkyhead</p>
+                        <div className="one-flex-unit">
+                            <Avatar
+                                className="embed-classname"
+                                alt = "embed-avatar"
+                                src = "https://thispersondoesnotexist.com/image">
+                            </Avatar>
+                            <div className="embed-username">
+                                <h5 className="embed-user">
+                                    <strong>MKBHD</strong>
+                                </h5>
+                                <p className="follow-by">followed by POTHI</p>
+                            </div>
+                        </div>
+                        <div className="folllow-button">
+                            <p className="follow-me"><strong>Follow</strong></p>
                         </div>
                     </div>
                     <div className="embed-unit">
-                        <Avatar
-                            className="embed-classname"
-                            alt = "embed-avatar"
-                            src = "https://thispersondoesnotexist.com/image">
-                        </Avatar>
-                        <div className="embed-username">
-                            <h5 className="embed-user">
-                                <strong>@ashish.chanchlani vines</strong>
-                            </h5>
-                            <p className="follow-by">suggested for you</p>
+                        <div className="one-flex-unit">
+                            <Avatar
+                                className="embed-classname"
+                                alt = "embed-avatar"
+                                src = "https://thispersondoesnotexist.com/image">
+                            </Avatar>
+                            <div className="embed-username">
+                                <h5 className="embed-user">
+                                    <strong>unbx^^:_:^^therapy</strong>
+                                </h5>
+                                <p className="follow-by">suggested for you</p>
+                            </div>
+                        </div>
+                        <div className="folllow-button">
+                            <p className="follow-me"><strong>Follow</strong></p>
+                        </div>
+                    </div>
+                    <div className="embed-unit">
+                        <div className="one-flex-unit">
+                            <Avatar
+                                className="embed-classname"
+                                alt = "embed-avatar"
+                                src = "https://thispersondoesnotexist.com/image">
+                            </Avatar>
+                            <div className="embed-username">
+                                <h5 className="embed-user">
+                                    <strong>some.RANDOM.person</strong>
+                                </h5>
+                                <p className="follow-by">suggested for you</p>
+                            </div>
+                        </div>
+                        <div className="folllow-button">
+                            <p className="follow-me"><strong>Follow</strong></p>
+                        </div>
+                    </div>
+                    <div className="embed-unit">
+                        <div className="one-flex-unit">
+                            <Avatar
+                                className="embed-classname"
+                                alt = "embed-avatar"
+                                src = "https://thispersondoesnotexist.com/image">
+                            </Avatar>
+                            <div className="embed-username">
+                                <h5 className="embed-user">
+                                    <strong>#theCreator</strong>
+                                </h5>
+                                <p className="follow-by">suggested for you</p>
+                            </div>
+                        </div>
+                        <div className="folllow-button">
+                            <p className="follow-me"><strong>Follow</strong></p>
                         </div>
                     </div>
                 </div>
