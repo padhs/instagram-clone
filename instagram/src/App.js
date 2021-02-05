@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
-import Post from './Post.js'
+import Post from './Post.js';
 import { database, auth } from "./firebase";
 import Modal from "@material-ui/core/Modal";
 import makeStyles from "@material-ui/core/styles/makeStyles";
@@ -8,12 +8,12 @@ import Button from "@material-ui/core/Button";
 import Input from "@material-ui/core/Input";
 import Avatar from "@material-ui/core/Avatar";
 import UseAnimations from "react-useanimations";
-import explore from 'react-useanimations/lib/explore'
-import settings from 'react-useanimations/lib/settings'
-import heart from 'react-useanimations/lib/heart'
-import mail from 'react-useanimations/lib/mail'
+import explore from 'react-useanimations/lib/explore';
+import settings from 'react-useanimations/lib/settings';
+import heart from 'react-useanimations/lib/heart';
+import mail from 'react-useanimations/lib/mail';
 import HomeIcon from '@material-ui/icons/Home';
-import searchToX from 'react-useanimations/lib/searchToX'
+import searchToX from 'react-useanimations/lib/searchToX';
 
 
 function getModalStyle() {
