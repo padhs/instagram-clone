@@ -14,6 +14,7 @@ import heart from 'react-useanimations/lib/heart';
 import mail from 'react-useanimations/lib/mail';
 import HomeIcon from '@material-ui/icons/Home';
 import searchToX from 'react-useanimations/lib/searchToX';
+import Tooltip from "./Tooltip";
 
 
 function getModalStyle() {
@@ -277,6 +278,7 @@ function App() {
                   <UseAnimations
                       animationKey="settings"
                       size={30}
+                      onClick={<Tooltip />}
                       style={{ cursor: "pointer",padding: 100 }}
                       animation={settings}/>
               </div>
