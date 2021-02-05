@@ -7,6 +7,13 @@ import makeStyles from "@material-ui/core/styles/makeStyles";
 import Button from "@material-ui/core/Button";
 import Input from "@material-ui/core/Input";
 import Avatar from "@material-ui/core/Avatar";
+import UseAnimations from "react-useanimations";
+import explore from 'react-useanimations/lib/explore'
+import settings from 'react-useanimations/lib/settings'
+import heart from 'react-useanimations/lib/heart'
+import mail from 'react-useanimations/lib/mail'
+import HomeIcon from '@material-ui/icons/Home';
+import searchToX from 'react-useanimations/lib/searchToX'
 
 
 function getModalStyle() {
@@ -32,6 +39,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function App() {
+
+    //declare the animations:
 
     const classes = useStyles();
     const [modalStyle] = useState(getModalStyle);
@@ -222,10 +231,56 @@ function App() {
         </Modal>
 
         <div className= "nav-bar">
-          <img className="nav-bar-image"
-               src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png"
-               alt="insta-letter-logo"
-          />
+          <div className="nav-bar-image">
+              <img src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png"
+                   alt="insta-letter-logo"
+              />
+          </div>
+          <div className="search-bar">
+              <div className="search-nav-buttons">
+                  <UseAnimations
+                      animationKey="searchToX"
+                      size={30}
+                      style={{ cursor: "pointer",padding: 100 }}
+                      animation={searchToX}/>
+                  <Input
+                        placeholder="Search..."
+                        type="text"/>
+              </div>
+          </div>
+          <div className="page-buttons">
+              <div className="nav-buttons">
+                  <HomeIcon style={{ fontSize: 30 }} />
+              </div>
+              <div className="nav-buttons">
+                  <UseAnimations
+                      animationKey="mail"
+                      size={30}
+                      style={{ cursor: "pointer",padding: 100 }}
+                      animation={mail}/>
+              </div>
+              <div className="nav-buttons">
+                  <UseAnimations
+                      animationKey="explore"
+                      size={30}
+                      style={{ cursor: "pointer",padding: 100 }}
+                      animation={explore}/>
+              </div>
+              <div className="nav-buttons">
+                  <UseAnimations
+                      animationKey="heart"
+                      size={30}
+                      style={{ cursor: "pointer",padding: 100 }}
+                      animation={heart}/>
+              </div>
+              <div className="nav-buttons">
+                  <UseAnimations
+                      animationKey="settings"
+                      size={30}
+                      style={{ cursor: "pointer",padding: 100 }}
+                      animation={settings}/>
+              </div>
+          </div>
             {user ? <Button
                 className="logout-navbar-button"
                 onClick={() => auth.signOut().then(() => setOpenSignIn(true))}>LOG OUT</Button> : <div>{/**/}</div>}
