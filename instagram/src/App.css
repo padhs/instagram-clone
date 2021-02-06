@@ -10,9 +10,6 @@
   flex-direction: row;
   justify-content: space-evenly;
 }
-.react-search-field-input{
-  padding: 0px
-}
 
 .nav-bar-image{
   object-fit: contain;
@@ -82,21 +79,26 @@
 }
 
 .signup-form{
-  flex:1;
+  padding: 20px;
+  padding-left: 50px;
+  padding-right: 50px;
   display: flex;
   flex-direction: column;
-  object-fit: contain;
   text-align: center;
-}
-
-.modal-phone-pic{
-  flex:1;
+  margin: 20px;
+  border: 3px solid;
+  border-color: #999;
+  border-radius: 5px;
 }
 
 .insta-logo-login{
-  padding-left: 15%;
-  margin-top: 50%;
+  margin-top: 40%;
   padding-bottom: 40px;
+}
+.signup-page{
+  display: flex;
+  flex-direction: row;
+  padding-top: 8%;
 }
 .username-login{
   margin-top: 20px;
@@ -203,4 +205,38 @@
 .nav-buttons{
   padding-top: 10px;
   padding-right: 7px;
+}
+.menu {
+  display: flex;
+  width: 200px;
+  flex-direction: column;
+  background: #ffffff;
+
+}
+.settings-menu {
+  cursor: pointer;
+  height: 30px;
+  padding: 5px;
+}
+.settings-menu{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.menu-content{
+  padding-top: 5px;
+  padding-left: 10px;
+}
+.settings-menu:hover {
+  color: #999;
+}
+.embed-username-1{
+  padding-top: 10px;
+}
+.follow-button-1{
+  padding-top: 10px;
+}
+.settings-menu-avatar{
+  padding-top: 4px;
+  padding-left: 4px;
 }
