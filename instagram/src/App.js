@@ -135,6 +135,7 @@ function App() {
         setAnchorEl(null);
     };
 
+
     //this is the modal(dialog-box design)
     //modal for signup. not for login
     const body = (
@@ -335,6 +336,8 @@ function App() {
                             <Post
                                 className="column-direction"
                                 key={id}
+                                postId={id}
+                                user={user}
                                 //mapping document id so that react doesn't re-render a post that is already showing.
                                 userName={posts.userName}
                                 captions={posts.captions}

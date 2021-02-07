@@ -9,6 +9,9 @@
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 
 .nav-bar-image{
@@ -63,6 +66,7 @@
   display: flex;
   align-items: center;
   padding-left: 15px;
+  font-size: 16px;
 }
 .user-image{
   padding-bottom: 5px;
@@ -71,7 +75,8 @@
 }
 
 .post-user-name-bottom{
-  padding-bottom: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   padding-left: 10px;
   font-weight: normal;
 }
@@ -265,6 +270,39 @@
   padding-top: 3px;
 }
 .comment-post-icon{
-  padding-top: 3px;
-  padding-left: 3px;
+  padding-top: 4px;
+  padding-left: 4px;
+}
+.logout-navbar-button{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.comment-form{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-top: 1px solid;
+  border-color: #ddd;
+  border-radius: 2px;
+}
+.post-input{
+  border: none;
+  flex: 1;
+}
+.comment-post-button{
+  flex: 0;
+}
+.emoticon-button{
+  padding-top: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.user-post-comments{
+  padding-left: 10px;
+}
+.view-comments{
+  padding-bottom: 5px;
+  font-size: small;
+  color: #999999;
 }
