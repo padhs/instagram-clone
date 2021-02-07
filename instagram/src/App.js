@@ -21,7 +21,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import SettingsIcon from '@material-ui/icons/Settings';
 import BookmarkIcon from '@material-ui/icons/Bookmark';
-import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder'; //use fontSize="large"
+//import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder'; //use fontSize="large"
 
 
 const StyledMenu = withStyles({
@@ -347,7 +347,6 @@ function App() {
                     <div className="embed-unit">
                         <div className="one-flex-unit">
                             <Avatar
-                                className="embed-classname"
                                 className={classes.large}
                                 alt = "embed-avatar"
                                 src = "https://thispersondoesnotexist.com/image">
