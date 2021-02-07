@@ -49,7 +49,15 @@
 .avatar{
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   padding: 15px;
+}
+.avatar-left{
+  display: flex;
+  flex-direction: row;
+}
+.avatar-right{
+  padding-top: 7px;
 }
 .post-user-name-top{
   display: flex;
@@ -57,7 +65,7 @@
   padding-left: 15px;
 }
 .user-image{
-  padding-bottom: 10px;
+  padding-bottom: 5px;
   object-fit: contain;
   width: 100%;
 }
@@ -238,4 +246,25 @@
 .settings-menu-avatar{
   padding-top: 4px;
   padding-left: 4px;
+}
+.post-buttons{
+  display: flex;
+  flex-direction: row;
+  padding-left: 5px;
+}
+.post-button-collection{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.last-post-button{
+  padding-right: 5px;
+}
+.telegram-post-icon{
+  padding-left: 3px;
+  padding-top: 3px;
+}
+.comment-post-icon{
+  padding-top: 3px;
+  padding-left: 3px;
 }

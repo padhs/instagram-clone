@@ -232,8 +232,8 @@ function App() {
             onClose={() => setOpen(false)}>
             <div
                 className={classes.paper}
-                 style={modalStyle}>
-                 {body}
+                style={modalStyle}>
+                {body}
             </div>
         </Modal>
 
