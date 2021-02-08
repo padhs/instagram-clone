@@ -116,7 +116,6 @@ function Post({userName, captions, imageUrl, postAvatar, postId, user}) {
                 </div>
                 <div className="avatar-right">
                     <ExpandMoreIcon
-                        onClick={() => setOpenMenuModal(false)}
                         fontSize="30"> </ExpandMoreIcon>
                 </div>
             </div>
