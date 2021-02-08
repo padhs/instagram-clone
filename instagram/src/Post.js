@@ -52,7 +52,6 @@ function Post({userName, captions, imageUrl, postAvatar, postId, user}) {
 
     const [comments, setComments] = useState([]);
     const [comment, setComment] = useState('');
-
     const modalStyle = useState(menuModalStyle);
     const classes = useStyles();
     const [openMenuModal, setOpenMenuModal] = useState(false);
@@ -64,7 +63,6 @@ function Post({userName, captions, imageUrl, postAvatar, postId, user}) {
                 .collection("posts")
                 .doc(postId)
                 .collection("comments")
-                .orderBy("timestamp", "desc")
                 .onSnapshot((snapshot => {
                     setComments(snapshot.docs.map((doc) => doc.data()))
                 }));
@@ -77,11 +75,11 @@ function Post({userName, captions, imageUrl, postAvatar, postId, user}) {
 
     const postComment = (event) => {
         event.preventDefault();
-        database.collection("posts").doc(postId).collection("comments").orderBy("timestamp","asc").add({
+        database.collection("posts").doc(postId).collection("comments").add({
             userName: user.displayName,
             text: comment,
-            timestamp: firebase.firestore.FieldValue.serverTimestamp()});
-        setComment('');
+            timestamp: firebase.firestore.FieldValue.serverTimestamp()
+        }). then(() =>{setComment('')});
     }
 
     return(
@@ -171,9 +169,9 @@ function Post({userName, captions, imageUrl, postAvatar, postId, user}) {
                         <p>view all comments</p>
                     </div>
                     {comments.map((comment) => (
-                        <h5>
-                            <strong>{comment.userName}</strong> {comment.text}
-                        </h5>
+                        <div className="generated-comments">
+                            <p><strong>{comment.userName}</strong> {comment.text}</p>
+                        </div>
                     ))}
                 </div>
                 <div className="post-comments">

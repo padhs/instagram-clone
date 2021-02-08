@@ -21,7 +21,8 @@ import ListItemText from '@material-ui/core/ListItemText';
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import SettingsIcon from '@material-ui/icons/Settings';
 import BookmarkIcon from '@material-ui/icons/Bookmark';
-//import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder'; //use fontSize="large"
+import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
+import PopupState, { bindTrigger, bindMenu } from 'material-ui-popup-state';
 
 
 const StyledMenu = withStyles({
@@ -125,7 +126,6 @@ function App() {
         auth
             .signInWithEmailAndPassword(email, password)
             .catch((error) => alert(error.message));
-        setOpen(false);
     }
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
@@ -134,7 +134,6 @@ function App() {
     const handleClose = () => {
         setAnchorEl(null);
     };
-
 
     //this is the modal(dialog-box design)
     //modal for signup. not for login
@@ -196,25 +195,30 @@ function App() {
 
     //this code comes into work anytime when an user gets logged in or out as the state of the user(object) gets changed.
     useEffect(() => {
-        const verifyUser = auth.onAuthStateChanged((authUser) => {
-         if (authUser) {
-             //user has logged in.
-             console.log(authUser);//this is for my convenience. not for the user.
-             setUser(authUser);//uses cookie tracking.(so this is persistent)
-             //state is not persistent
-         } else {
-             //user is not logged in. (logged out.)
-             setUser(null)
-         }
-
+        const unsubscribe= auth.onAuthStateChanged((authUser) => {
+            if(authUser){
+                //if user has logged in.
+                console.log(authUser);
+                setUser(authUser);//uses cookie tracking. so this is persistent.
+                //state is not persistent.
+                if(authUser.displayName){
+                    //do nothing. It's chill. This means that the user is logged in successfully.
+                }else{
+                    return authUser.updateProfile({
+                        displayName: username,
+                    });
+                }
+            }else{
+                setUser(null);
+            }
         })
         return () => {
-            //check if the user is spamming. (creating too many login sessions too quick)
-            verifyUser();
-            //detach the listener so that we don't have too many listeners created.(in case someone is out of their minds.)
-            //if the user didn't do that earlier, it will then fire the useEffect
+            //check if the user is spamming. (creating too many login sessions too quickly.)
+            unsubscribe();
+            //detach the listener so that we don't have too many listeners created.(in case someone is out of their minds)
+            //if the user didn't do that earlier, it will then fire the useEffect.
         }
-    }, [user, username]);
+    },[user , username]);
 
     useEffect(() => {
         database.collection('posts').onSnapshot(snapshot => {
@@ -272,11 +276,32 @@ function App() {
                             animation={explore}/>
                     </div>
                     <div className="nav-buttons">
-                        <UseAnimations
-                            animationKey="heart"
-                            size={30}
-                            style={{ cursor: "pointer",padding: 100 }}
-                            animation={heart}/>
+                        <PopupState
+                            variant="popover"
+                            popupId="demo-popup-menu">
+                            {(popupState) => (
+                                <React.Fragment>
+                                    <UseAnimations animationKey="heart"
+                                                   size={30}
+                                                   style={{ cursor: "pointer", padding: 100 }}
+                                                   animation={heart}
+                                                   {...bindTrigger(popupState)}/>
+                                    <Menu {...bindMenu(popupState)}>
+                                        <div className="menu-content-heart-item">
+                                            <div className="border-icon">
+                                                <FavoriteBorderIcon style={{ fontSize: 50}}/>
+                                            </div>
+                                            <div className="menu-activity">
+                                                <p>Activity On Your Posts</p>
+                                            </div>
+                                            <div className="menu-like-comment">
+                                                <p>When someone likes or comments on your posts, you'll see it here.</p>
+                                            </div>
+                                        </div>
+                                    </Menu>
+                                </React.Fragment>
+                            )}
+                        </PopupState>
                     </div>
                     <div className="nav-buttons">
                         <div>
@@ -293,8 +318,7 @@ function App() {
                                 anchorEl={anchorEl}
                                 keepMounted
                                 open={Boolean(anchorEl)}
-                                onClose={handleClose}
-                            >
+                                onClose={handleClose}>
                                 <StyledMenuItem>
                                     <ListItemIcon>
                                         <AccountCircleIcon fontSize="30" />
