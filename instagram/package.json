@@ -50,5 +50,6 @@
   "main": "index.js",
   "author": "padhs",
   "license": "ISC",
-  "keywords": []
+  "keywords": [],
+  "devDependencies": {}
 }
