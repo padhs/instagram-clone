@@ -9,8 +9,8 @@ const {JWT_SECRET} = require('../keys');
 
 
 router.post('/signup', (req, res) => {
-    const {name, email, password} = req.body;
-    if(!email || !password || !name){
+    const {userName, fullName, email, password} = req.body;
+    if(!email || !password || !userName || !fullName){
         return res.status(422).json('please add all the fields');
     } else {
         console.log(req.body);

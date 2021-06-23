@@ -3,21 +3,22 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@material-ui/core": "^4.11.2",
+    "@material-ui/core": "^4.11.4",
     "@material-ui/icons": "^4.11.2",
-    "@testing-library/jest-dom": "^5.11.6",
-    "@testing-library/react": "^11.2.2",
-    "@testing-library/user-event": "^12.4.0",
-    "emoji-mart": "^3.0.0",
-    "emoji-picker-react": "^3.4.2",
-    "firebase": "^8.2.1",
-    "material-ui-popup-state": "^1.7.1",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
+    "@mui-treasury/styles": "^1.13.1",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/user-event": "^12.8.3",
+    "emoji-mart": "^3.0.1",
+    "emoji-picker-react": "^3.4.8",
+    "firebase": "^8.6.8",
+    "material-ui-popup-state": "^1.8.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "react-instagram-embed": "^2.0.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "^1.1.5",
-    "react-search-field": "^1.2.0",
+    "react-scripts": "^4.0.3",
+    "react-search-field": "^1.2.1",
     "react-simple-hook-modal": "^1.1.0",
     "react-useanimations": "^2.0.6",
     "reactjs-popup": "^2.0.4",
@@ -52,5 +53,7 @@
   "author": "padhs",
   "license": "ISC",
   "keywords": [],
-  "devDependencies": {}
+  "devDependencies": {
+    "@material-ui/styles": "^4.11.4"
+  }
 }
