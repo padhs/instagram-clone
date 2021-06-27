@@ -8,6 +8,7 @@ import {Link} from 'react-router-dom';
 import '../../App.css';
 import { useTwitterBtnStyles } from '@mui-treasury/styles/button/twitter';
 import { usePushingGutterStyles } from '@mui-treasury/styles/gutter/pushing';
+import phonePic from '../normalphone.png';
 
 
 
@@ -39,7 +40,7 @@ function Login(){
             <div className="signup-page">
                 <div className="signin-pic">
                     <img className="modal-phone-pic"
-                         src="https://firebasestorage.googleapis.com/v0/b/instagram-clone-7a115.appspot.com/o/normalphone.png?alt=media&token=bf47c0ad-9094-4f50-b785-31370285570b"
+                         src={phonePic}
                          alt="phone-image"/>
                 </div>
                 <div className="signin-form">

@@ -95,7 +95,7 @@ const useStyles = makeStyles((theme) => ({
 function App() {
 
     const classes = useStyles();
-    const [modalStyle] = useState(getModalStyle);
+    const modalStyle = useState(getModalStyle);
     const [posts, setPosts] =useState([]);
     //this is for the login modal(a small piece of dialog-box which will take username and pass)
     const [open, setOpen] = useState (false);

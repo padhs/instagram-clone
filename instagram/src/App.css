@@ -390,3 +390,91 @@ a:visited {
   z-index: 1;
   opacity: 1;
 }
+.profile-tab{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.tab-option{
+  display: flex;
+  flex-direction: row;
+}
+.posts-tab{
+  display: flex;
+  flex-direction: row;
+}
+.tab-name{
+  padding-left: 5px;
+}
+.profile-info{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.avatar-info{
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  justify-content: center;
+  padding-top: 30px;
+  padding-bottom: 50px;
+}
+.info{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.username{
+  font-size: x-large;
+  font-weight: normal;
+}
+.user-full-name{
+  font-weight: bold;
+}
+.profile-posts{
+  display: flex;
+  flex-direction: row;
+  margin-right: 20px;
+}
+.write-info{
+  padding-left: 5px;
+}
+.profile-followers{
+  display: flex;
+  flex-direction: row;
+  margin-right: 20px;
+}
+.profile-following{
+  display: flex;
+  flex-direction: row;
+  margin-right: 20px;
+}
+.personal-info{
+  display: flex;
+  flex-direction: row;
+}
+.profile-settings{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.avatar-profile{
+  margin-right: 80px;
+}
+.profile-options{
+  display: flex;
+  flex-direction: column;
+}
+.profile-options-dialog{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 20px;
+  border-top: 1px solid #dddddd;
+  border-bottom: 1px solid #dddddd;
+  padding-left: 100px;
+  padding-right: 100px;
+  font-size: small;
+}

@@ -7,7 +7,7 @@ import {useRoundInputBaseStyles} from '@mui-treasury/styles/inputBase/round';
 import {Link} from "react-router-dom";
 import { useTwitterBtnStyles } from '@mui-treasury/styles/button/twitter';
 import { usePushingGutterStyles } from '@mui-treasury/styles/gutter/pushing';
-
+import phonePic from '../normalphone.png'
 
 
 function SignUp(){
@@ -17,6 +17,7 @@ function SignUp(){
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [username, setUsername] = useState('');
+    const [fullName, setFullName] = useState('');
 
     const handleSignIn = (event) => {
         event.preventDefault();
@@ -43,7 +44,7 @@ function SignUp(){
     return(
         <div className="modal-insta-logo">
             <img className="modal-phone-pic"
-                 src="https://firebasestorage.googleapis.com/v0/b/instagram-clone-7a115.appspot.com/o/normalphone.png?alt=media&token=bf47c0ad-9094-4f50-b785-31370285570b"
+                 src={phonePic}
                  alt="phone-image"/>
             <form className="signup-form">
                 <div className="insta-logo-login">
@@ -56,6 +57,8 @@ function SignUp(){
                 </div>
 
                 <div className="login-input-buttons">
+                    <InputBase classes={styles} type="text" placeholder={'Full Name'} value={fullName} onChange={(fullName) => {setFullName(fullName.target.value)}}/>
+                    <Box pb={1}/>
                     <InputBase classes={styles} type= "text" placeholder={'username'} value={username} onChange={(email) => {setUsername(email.target.value)}}/>
                     <Box pb={1} />
                     <InputBase classes={styles} type= "text" placeholder={'email'} value={email} onChange={(password) => {setEmail(password.target.value)}}/>
